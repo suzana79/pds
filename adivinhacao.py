@@ -1,27 +1,43 @@
-    import random
-    def jogar():
-        numero_secreto = random.randint(1,10)
-        tentativas = 1
-        max_tentativas = 5
+import random
+import jogos
+def jogar_adivinhacao():
+    
+    nivel = int(input("Escolha o nivel de dificuldade (1- Facil, 2- Medio, 3- Dificil)"))
+    max_numero = 10 if nivel == 1 else 50 if nivel == 2 else 100
+    numero_secreto = random.randint(1, max_numero)
+    tentativas = 10 if nivel == 1 else 5 if nivel == 2 else 3
+    pontos = 1000
         
-        while tentativas < max_tentativas :
-            palpite = int(input("digite o seu palpite"))
-            tentativas += 1
-            if palpite == numero_secreto:
-                print (f"parabéns, você acertou")
-                break 
-            elif palpite > numero_secreto:
-                print (f"tente um  numero menor")
-            else :
-                print(f"tente um número maior")
-                
-            if tentativas < max_tentativas:
-                print (f"você tem {max_tentativas - tentativas} tentativas")
-            else:
-                print(f"você não acertou o número era {numero_secreto}")
-                
-        print("Fim de jogo")
-
- if(__name__ == "__main__"):
-            jogar()   
+    print(f"Jogo de Adivinhação - Nível {nivel}")
+    print(f"Tente adivinhar o número que estou pensando, entre 1 e {max_numero}.")
         
+    for tentativa in range(1, tentativas + 1):
+        print(f"Tentativa {tentativa} de {tentativas}")
+        palpite = int(input("Digite seu palpite :"))
+            
+        if palpite < 1 or palpite > max_numero:
+            print(f"Digite um número entre 1 e {max_numero}.")
+            continue
+            
+        acertou = palpite == numero_secreto
+        maior = palpite > numero_secreto
+        menor = palpite < numero_secreto
+            
+        if acertou:
+            print(f" Você acertou e fez {pontos} pontos!")
+            break
+        else:
+            pontos_perdidos = abs(numero_secreto - palpite)
+            pontos -= pontos_perdidos
+            if maior:
+               print ("Seu paplpite foi maior do que o número secreto.")
+            elif menor:
+               print ("Seu palpite foi menor do que o número secreto.")
+                    
+    if not acertou:
+            print(f"Suas tentativas acabaram. O número secreto era {numero_secreto}.")
+            print("Fim do jogo!")
+    jogos.escolha_jogo()
+            
+if __name__== "__main__":
+            jogar_adivinhacao()
