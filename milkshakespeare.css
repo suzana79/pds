@@ -1,0 +1,25 @@
+body {
+    background-color: #c4ebf8; /* azul claro */
+    color: #fcfcfc; /* rosa claro */
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    color: rgb(252, 173, 228)
+}
+
+
+section {
+    margin: 20px;
+    padding: 10px;
+    background-color:rgb(247, 182, 230);
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
