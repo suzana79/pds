@@ -1,25 +1,40 @@
 body {
-    background-color: #c4ebf8; /* azul claro */
-    color: #fcfcfc; /* rosa claro */
+    background-color: #e0fcff;
+    color: rgb(249, 249, 249);
     font-family: Arial, sans-serif;
+}
+
+img {
+    width: 15%;
 }
 
 header {
     text-align: center;
     padding: 20px;
-    color: rgb(252, 173, 228)
+    color: rgb(244, 110, 204);
+}
+ 
+h1 {
+    font-size: 50px;
 }
 
+p {
+    font-size: 20px;
+}
 
+h2 {
+    color: #f0e871;
+}
 section {
     margin: 20px;
     padding: 10px;
-    background-color:rgb(247, 182, 230);
+    background-color:rgb(251, 153, 222);
     border-radius: 5px;
 }
 
 footer {
     text-align: center;
+    color:rgb(244, 110, 204);
     margin-top: 20px;
     padding: 10px;
 }
